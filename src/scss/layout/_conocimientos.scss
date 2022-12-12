@@ -1,0 +1,53 @@
+.conocimientos {
+    overflow: hidden;
+    padding: 3rem 0;
+    background-color: $secundario;
+    h2,
+    h3 {
+        color: $blanco;
+    }
+    h2 {
+        display: grid;
+        place-items: center;
+        font-size: 2.8rem;
+        &::after {
+            content: '';
+            width: 10rem;
+            height: .4rem;
+            display: block;
+            background-color: pink;
+        }
+    }
+    .tecnologias {
+        h3 {
+            @include tablet {
+                margin-top: 1rem;
+            }
+            font-size: 2.5rem;
+            font-weight: $regular;
+        }
+    }
+    .iconos {
+        margin: 1rem 0;
+        @include displayGrid(2, 1rem);
+        @include tablet-telefono {
+            @include displayGrid(4, 1rem);
+        }
+        @include desktop {
+            @include displayGrid(8, 1rem);
+        }
+        .icono {
+            font-size: 7rem;
+            padding: 1rem;
+            text-align: center;
+            &:nth-child(2n) {
+                background-color: darken($color: $secundario, $amount: 20);
+                color: $blanco;
+            }
+            &:nth-child(2n+1) {
+                color: $negro;
+                background-color: lighten($color: $secundario, $amount: 10);
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.hero {
+    height: 40vh;
+    background-image: url(../img/fondo2.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: relative;
+    @include tablet-telefono {
+        background-image: url(../img/fondo6.jpg);
+        height: 50vh;
+    }
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .3);
+        display: grid;
+        place-items: center;
+        h2 {
+            color: $blanco;
+            span {
+                display: inline-block;
+                padding: .6rem;
+                background-color: $terciario;
+                color: $negro;
+            }
+        }
+    }
+}
+
+.sobremi {
+    overflow: hidden;
+    background-color: $primario;
+    padding: 1rem 0;
+    .contenido-sobremi {
+        padding: 1rem;
+        @include tablet-telefono {
+            @include displayGrid(2, 1rem);
+        }
+        .mifoto {
+            display: grid;
+            place-items: center;
+        }
+        .datospersonales {
+            h2 {
+                display: grid;
+                place-items: center;
+                color: $blanco;
+                font-size: 2.8rem;
+                text-align: center;
+                @include telefono {
+                    display: block;
+                    text-align: left;
+                }
+                &::after {
+                    content: '';
+                    width: 8rem;
+                    height: .4rem;
+                    display: block;
+                    background-color: pink;
+                }
+            }
+            p {
+                color: $blanco;
+                text-align: justify;
+                font-weight: $regular
+            }
+        }
+    }
+}

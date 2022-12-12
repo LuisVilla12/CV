@@ -1,0 +1,62 @@
+.titulo {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 50%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+
+.btnfijo {
+    position: fixed;
+    color: $blanco;
+    bottom: .6rem;
+    right: .3rem;
+    font-size: 3rem;
+    transition: font-size, color .3s ease-in-out;
+}
+
+.none {
+    display: auto;
+    @include tablet {
+        display: none;
+    }
+}
+
+@keyframes mover {
+    // 0% {
+    //     transform: translate(30%);
+    // }
+    from {
+        margin-left: 50%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    75% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes prueba {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+}

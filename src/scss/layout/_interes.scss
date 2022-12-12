@@ -1,0 +1,61 @@
+.contenedor-intereses {
+    overflow: hidden;
+    background-color: $primario;
+    padding: 2rem 0;
+    h3 {
+        display: grid;
+        place-items: center;
+        font-size: 2.8rem;
+        color: $blanco;
+        &::after {
+            content: '';
+            width: 6rem;
+            height: .4rem;
+            display: block;
+            background-color: pink;
+        }
+    }
+}
+
+.contenido-interes {
+    @include tablet {
+        @include displayGrid(2, 2rem);
+    }
+    .educativo,
+    .personal {
+        display: grid;
+        place-items: center;
+        margin-top: 2rem;
+        h2 {
+            font-size: 2.4rem;
+            color: $blanco;
+            margin: .5rem 0;
+        }
+        img {
+            max-height: 20rem;
+        }
+        .lista {
+            padding: 2rem 0 0 0;
+            ul {
+                @include displayGrid(3, 1.5rem);
+                list-style: none;
+                padding: 0;
+                li {
+                    color: $blanco;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &:nth-child(2n) {
+                        color: $terciario;
+                    }
+                    &:nth-child(2n+1) {
+                        color: lighten($color: $terciario, $amount: 20);
+                    }
+                    i {
+                        font-size: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
